@@ -1,0 +1,120 @@
+body{
+  background-color: #e6fdff;
+  font-family: 'Catamaran', sans-serif;
+  color: #140033;
+}
+
+.landing-background{
+  background-color: #99ff33;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.signin-btn{
+  border: 1px solid white;
+  float:right;
+  padding: 10px;
+  font-weight: 600;
+  color: white;
+  background-color: #00ace6;
+  border-radius: 5%;
+  margin-right: 50px;
+}
+
+.signup-btn{
+  border: 2px solid white;
+  margin: 0 auto;
+  width: 120px;
+  text-align: center;
+  padding: 20px;
+  font-weight: 900;
+  color: white;
+  background-color: #00ace6;
+  border-radius: 5%;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.signup-btn:hover{
+  background-color: #80bfff;
+}
+
+.logo{
+  text-align: center;
+  font-size: 60px;
+  line-height: 45px;
+}
+
+.smasher{
+  font-style: italic;
+  color: #e6005c;
+}
+
+.clear {
+  clear: both;
+}
+
+.tagline{
+  text-align: center;
+  padding-bottom: 50px;
+  font-size: 30px;
+}
+
+.information{
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+
+}
+
+.box{
+  display:inline-block;
+  width: 25%;
+  padding-top:150px;
+  margin: 2.5%;
+  border:1px solid gray;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5%;
+  min-width: 210px;
+  overflow: hidden;
+}
+
+.couple{
+  background-image: url("../assets/pic1.png");
+  background-size: cover;
+}
+
+.conversation{
+  background-image: url("../assets/pic3.png");
+  background-size: cover;
+}
+
+.learn{
+  background-image: url("../assets/pic2.png");
+  background-size: cover;
+}
+
+
+p{
+  font-weight: 900;
+  font-size: 25px;
+}
+
+@media (max-width: 900px) {
+  .box{
+    display:block;
+    width: 70%;
+    margin: 15px auto;
+  }
+}
+
+@media (min-width: 901px) {
+  .box{
+    float:none;
+    width: 25%;
+    display:inline-block;
+    margin: 10px 1.5%;
+    height: 350px;
+  }
+}
