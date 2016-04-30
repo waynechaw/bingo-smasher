@@ -12,6 +12,6 @@ gulp.task('watch', ['sass'], function(){
   gulp.watch('client/scss/**/*.scss', ['sass']); 
   // Other watchers
   nodemon({
-    script:'./server.js'
+    script:'./server/server.js'
   })
 })
