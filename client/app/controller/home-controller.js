@@ -1,4 +1,4 @@
-bingoApp.controller('homeCTRL', function($scope, $window, Auth) {
+bingoApp.controller('homeCTRL', function($scope, $window, Auth, $location, $localStorage) {
 
   $scope.modalShown = false;
   $scope.toggleModal = function() {
@@ -11,11 +11,11 @@ bingoApp.controller('homeCTRL', function($scope, $window, Auth) {
   $scope.user = {};
 
   $scope.signup = function () {
-    console.log("signup");
     Auth.signup($scope.user)
       .then(function (token) {
-        $window.localStorage.setItem('token', token);
-        $window.localStorage.setItem('username', $scope.user.username);
+        $localStorage.currentUser = $scope.user.username;
+        $localStorage.token = token;
+        $location.path('/home');
       })
       .catch(function (error) {
         console.error(error);
