@@ -9,32 +9,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body>
+<body ng-app="bingoApp">
 
-  <div class="landing-background">
-    <div class="signin-btn">Sign in</div>
-    <div class="clear"></div>
-    <h1 class="logo"><span class="bingo">Bingo</span><br> <span class="smasher">Smasher</span></h1>
-    <h2 class="tagline">Dating service for the childfree</h2>
-    <div class="signup-btn">Get Started</div>
-  </div>
 
-  <div class="information">
-    <div class="box couple">
-      <p>No more questions on why you don't want children</p>
-    </div>
-    <div class="box learn">
-      <p>Learn more about what child-free is all about</p>
-    </div>
-    <div class="box conversation">
-      <p>Find someone with the same values as you</p>
-    </div>
-  </div>
+
+  <div ui-view></div>
 
 
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="lib/angular-animate/angular-animate.js"></script>
+
   <script src="app/app.js"></script>
+  <script src="app/controller/home-controller.js"></script>
+  <script src="app/service/auth.js"></script>
 
 </body>
 </html>
