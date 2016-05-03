@@ -1,16 +1,29 @@
 bingoApp.controller('homeCTRL', function($scope, $window, Auth, $location, $localStorage) {
 
   $scope.modalShown = false;
+  $scope.signInModalShown = false;
+  $scope.usernameTaken = false;
   $scope.toggleModal = function() {
 
     $scope.modalShown = !$scope.modalShown;
   };
+
+  $scope.toggleSignIn = function() {
+
+    $scope.signInModalShown = !$scope.signInModalShown;
+  };
+
+  $scope.username = function(){
+      $scope.usernameTaken = false;
+  };
+
 
 
 
   $scope.user = {};
 
   $scope.signup = function () {
+    $scope.usernameTaken = false;
     Auth.signup($scope.user)
       .then(function (token) {
         $localStorage.currentUser = $scope.user.username;
@@ -18,9 +31,22 @@ bingoApp.controller('homeCTRL', function($scope, $window, Auth, $location, $loca
         $location.path('/home');
       })
       .catch(function (error) {
-        console.error(error);
+        $scope.usernameTaken = true;
       });
   };
+
+  $scope.signin = function () {
+    Auth.signin($scope.user)
+      .then(function (token) {
+        $localStorage.currentUser = $scope.user.username;
+        $localStorage.token = token;
+        $location.path('/home');
+      })
+      .catch(function (error) {
+        $scope.failed = true;
+      });
+  };
+
 
 });
 

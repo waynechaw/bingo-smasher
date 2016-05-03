@@ -1,6 +1,6 @@
 
 <div class="landing-background">
-  <div class="btn signin">Sign in</div>
+  <div class="btn signin" ng-click='toggleSignIn()'>Sign in</div>
   <div class="clear"></div>
   <h1 class="logo"><span class="bingo">Bingo</span><br> <span class="smasher">Smasher</span></h1>
   <h2 class="tagline">Dating service for the childfree</h2>
@@ -9,34 +9,58 @@
 
 <div class="information">
   <div class="box couple">
-    <p>No more questions on why you don't want children</p>
+    <p class="hook">No more questions on why you don't want children</p>
   </div>
   <div class="box learn">
-    <p>Learn more about what child-free is all about</p>
+    <p class="hook">Learn more about what child-free is all about</p>
   </div>
   <div class="box conversation">
-    <p>Find someone with the same values as you</p>
+    <p class="hook">Find someone with the same values as you</p>
   </div>
 </div>
 
-<modal-dialog show='modalShown' width='400px'>
+<modal-dialog show='modalShown'>
 
   <h1 class="logo"><span class="bingo">Bingo</span><br> <span class="smasher">Smasher</span></h1>
 
-  <form>
+  <form name="signupform" novalidate>
 
-    <label for="lname">Username</label>
-    <input type="text" id="username" name="lastname" ng-model='user.username'>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" ng-model='user.username' ng-minlength="3" required="" ng-click="username()">
+    <div ng-show="signupform.username.$error.required && signupform.username.$touched"  >Username required</div>
+    <div ng-show="signupform.username.$error.minlength">Username should be at least 3 characters</div>
+    <div ng-show="usernameTaken">Username taken</div>
 
     <label for="password">Password</label>
-    <input type="password" id="password" name="password" ng-model='user.password'>
+    <input type="password" id="password" name="password" ng-model='user.password' ng-minlength="6" required="">
+    <div ng-show="signupform.password.$error.required && signupform.password.$touched">Password required</div>
+    <div ng-show="signupform.password.$error.minlength">Password should be at least 6 characters</div>
 
     <label for="password2">Confirm Password</label>
     <input type="password" id="password2" name="password2" ng-model='user.password2'>
+    <div ng-show="(signupform.password.$viewValue != signupform.password2.$viewValue) && signupform.password2.$touched">Passwords do not match</div>
+
 
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" ng-model='user.email'>
+    <input type="email" id="email" name="email" ng-model='user.email' required="">
+    <div ng-show="signupform.email.$error.required && signupform.email.$touched">Email required</div>
+    <span ng-show="signupform.email.$error.email && signupform.email.$touched">This is not a valid email.</span>
   
-    <input type="submit" value="Sign Up" ng-click="signup()">
+    <input ng-disabled="signupform.$invalid || (signupform.password.$viewValue != signupform.password2.$viewValue)" type="submit" value="Sign Up" ng-click="signup();">
+  </form>
+</modal-dialog>
+
+<modal-dialog show='signInModalShown'>
+
+  <form name="loginform">
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="lastname" ng-model='user.username' required="">
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" ng-model='user.password' required="">
+
+    <div ng-show="failed">Invalid Credentials</div>
+    <input type="submit" value="Sign In" ng-click="signin()" ng-disabled="loginform.$invalid">
   </form>
 </modal-dialog>

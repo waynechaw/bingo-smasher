@@ -8,7 +8,7 @@ body{
   color: #140033;
 }
 
-p{
+p.hook{
   font-weight: 900;
   font-size: 25px;
   background:rgba(0,0,0,0.2);
@@ -50,7 +50,7 @@ p{
   font-size: 20px;
 }
 
-.signup:hover{
+.btn:hover{
   background-color: #80bfff;
 }
 
@@ -142,7 +142,8 @@ p{
   /* A centered div above the overlay with a box shadow. */
   z-index:10000;
   position: absolute;
-  width: 50%; /* Default */
+  width: 30%; /* Default */
+  min-width: 300px;
 
   /* Center the dialog */
   top: 50%;
@@ -199,6 +200,10 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #80bfff;
+}
+
+input[type="submit"]:disabled {
+    background: #dddddd;
 }
 
 label{
