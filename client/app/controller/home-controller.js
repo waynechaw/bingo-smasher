@@ -14,7 +14,8 @@ bingoApp.controller('homeCTRL', function($scope, $window, Auth) {
     console.log("signup");
     Auth.signup($scope.user)
       .then(function (token) {
-        $window.localStorage.setItem('com.shortly', token);
+        $window.localStorage.setItem('token', token);
+        $window.localStorage.setItem('username', $scope.user.username);
       })
       .catch(function (error) {
         console.error(error);

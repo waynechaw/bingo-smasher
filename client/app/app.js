@@ -5,10 +5,16 @@ bingoApp.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-  .state('home', {
+  .state('frontpage', {
       url: '/',
       templateUrl: 'app/templates/home.html',
       controller: 'homeCTRL'
+
+  })
+  .state('userhome', {
+      url: '/home',
+      templateUrl: 'app/templates/user-home.html',
+      controller: 'userHomeCTRL'
 
   })
         
