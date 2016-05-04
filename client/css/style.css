@@ -1,9 +1,15 @@
+@font-face {
+  font-family: 'Omnes';
+  /*a name to be used later*/
+  src: url("https://github.com/onmodulus/pulse-site/blob/master/public/fonts/omnes-webfont.ttf");
+  /*URL to font*/ }
+
 html, body {
   height: 100%; }
 
 body {
   background-color: #e6fdff;
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Omnes';
   color: #140033; }
 
 p.hook {
@@ -16,7 +22,7 @@ p.hook {
   margin-bottom: 0px; }
 
 .landing-background {
-  background-color: #99ff33;
+  background-color: #4d79ff;
   padding-top: 25px;
   padding-bottom: 25px; }
 
