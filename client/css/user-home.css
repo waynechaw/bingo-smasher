@@ -1,0 +1,26 @@
+.navigation {
+  background-color: #99ff33; }
+  .navigation ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center; }
+  .navigation li {
+    padding: 0.5rem 2.5rem;
+    font-weight: 600;
+    border: 1px solid #99ff33;
+    cursor: pointer;
+    font-size: 1.3rem;
+    white-space: nowrap; }
+  .navigation li:hover {
+    background-color: #BFFD80;
+    border-color: #99ff33 black; }
+  .navigation .logo {
+    font-weight: 600;
+    line-height: 52px;
+    padding-left: 25px;
+    font-size: 18px;
+    position: absolute;
+    left: 0; }
+    .navigation .logo .smasher {
+      color: #e6005c; }
