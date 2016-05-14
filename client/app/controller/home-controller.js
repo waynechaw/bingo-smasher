@@ -21,6 +21,7 @@ bingoApp.controller('homeCTRL', function($scope, $window, Auth, $location, $loca
 
 
   $scope.user = {};
+  $scope.signInUser = {};
 
   $scope.signup = function () {
     $scope.usernameTaken = false;
@@ -36,9 +37,9 @@ bingoApp.controller('homeCTRL', function($scope, $window, Auth, $location, $loca
   };
 
   $scope.signin = function () {
-    Auth.signin($scope.user)
+    Auth.signin($scope.signInUser)
       .then(function (token) {
-        $localStorage.currentUser = $scope.user.username;
+        $localStorage.currentUser = $scope.signInUser.username;
         $localStorage.token = token;
         $location.path('/home');
       })

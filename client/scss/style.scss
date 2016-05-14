@@ -1,90 +1,89 @@
-@font-face {
-    font-family: 'Omnes'; /*a name to be used later*/
-    src: url('https://github.com/onmodulus/pulse-site/blob/master/public/fonts/omnes-webfont.ttf'); /*URL to font*/
-}
-
-html, body {
-height: 100%;
-}
-
-body{
-  background-color: #e6fdff;
-  font-family: 'Omnes';
-  color: #140033;
-}
-
-p.hook{
-  font-weight: 900;
-  font-size: 25px;
-  background:rgba(0,0,0,0.2);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin-bottom: 0px;
-}
-
-
-.landing-background{
-  background-color: #4d79ff;
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-
-.btn{
-  border: 2px solid white;
-  color: white;
-  background-color: #00ace6;
-  border-radius: 5%;
-  cursor: pointer;
-}
-
-.signin{
-  float:right;
-  padding: 10px;
-  font-weight: 600;
-  margin-right: 50px;
-}
-
-.signup{
-  margin: 0 auto;
-  width: 120px;
-  text-align: center;
-  padding: 20px;
-  font-weight: 900;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-
-.btn:hover{
-  background-color: #80bfff;
-}
-
-.logo{
-  text-align: center;
-  font-size: 60px;
-  line-height: 45px;
-}
-
-.smasher{
-  font-style: italic;
-  color: #e6005c;
-}
+$primary-color: #ffff60;
+$primary-button-color: #00ace6;
+$primary-button-hover-color: #80bfff;
 
 .clear {
   clear: both;
 }
 
-.tagline{
+
+@font-face {
+    font-family: 'Omnes'; /*a name to be used later*/
+    src: url('../fonts/omnes-webfont.ttf'); /*URL to font*/
+}
+
+body{
+  font-family: 'Omnes';
+}
+
+*{
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style-type: none; 
+  padding: 0;
+  margin:0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.introduction{
+  background-color: $primary-color;
+  padding: 30px 25px;    
+
+  h2{
+    text-align: center;
+    padding-bottom: 25px;
+    font-size: 30px;
+  }
+}
+
+.logo{
+  width: 250px;
+  margin: auto;
+
+  img{
+    width:100%;
+  }
+
+}
+
+.btn{
+  background-color: $primary-button-color;
+  font-weight: 900;
+  border: 2px solid white;
+  color: white;
+  border-radius: 5%;
+  cursor: pointer;
+  padding: 15px;
   text-align: center;
-  padding-bottom: 50px;
-  font-size: 30px;
+}
+
+.btn:hover{
+  background-color: $primary-button-hover-color;
+}
+
+.signin{
+  @extend .btn;
+  float:right;
+}
+
+.signup{
+  @extend .btn;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
 }
 
 .information{
   margin: 0 auto;
   width: 80%;
   text-align: center;
-
 }
 
 .box{
@@ -94,25 +93,36 @@ p.hook{
   min-width: 210px;
   padding-top:150px;
   margin: 2.5%;
-  border:1px solid gray;
   text-align: center;
-  box-sizing: border-box;
   border-radius: 1%;
   overflow: hidden;
   background-size: cover;
 }
 
 .couple{
+  @extend .box;
   background-image: url("../assets/pic1.png");
 }
 
 .conversation{
+  @extend .box;
   background-image: url("../assets/pic3.png");
 }
 
 .learn{
+  @extend .box;
   background-image: url("../assets/pic2.png");
 }
+
+.hook{
+  font-weight: 900;
+  font-size: 25px;
+  background:rgba(0,0,0,0.2);
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0px;
+}
+
 
 @media (max-width: 900px) {
   .box{
@@ -143,6 +153,7 @@ p.hook{
   background-color:#000000;
   opacity: 0.8;
 }
+
 .ng-modal-dialog {
   /* A centered div above the overlay with a box shadow. */
   z-index:10000;
@@ -163,10 +174,12 @@ p.hook{
   border:2px solid gray;
 
 }
+
 .ng-modal-dialog-content {
   padding:10px;
   text-align: left;
 }
+
 .ng-modal-close {
   position: absolute;
   top: 3px;
@@ -180,19 +193,18 @@ p.hook{
 }
 
 
-input[type=text], input[type=email], input[type=password],  select {
+input[type=text], input[type=email], input[type=password] {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 5px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
 }
 
 input[type=submit] {
+    background-color: $primary-button-color;
     width: 100%;
-    background-color: #00ace6;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -204,7 +216,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #80bfff;
+    background-color: $primary-button-hover-color;
 }
 
 input[type="submit"]:disabled {

@@ -1,0 +1,80 @@
+.avatar{
+  width: 250px;
+  margin: 20px auto;
+
+  .name{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2.5em;;
+    margin: 0;
+  }
+
+}
+
+
+.profile-container{
+  padding: 1em 2em;
+  margin: auto;
+  width: 75%;
+  background-color: #F5F5F5;
+
+
+  .summary{
+    vertical-align:top;
+
+    display:inline-block;
+    padding: 1em;
+    width: 35%;
+    background-color: white;
+    border: 1px solid #D8D8D8;
+
+  }
+
+
+  .wall{
+
+    margin: 0 2%;
+
+    display:inline-block;
+    width: 60%;
+
+
+    input{
+      width: 80%;
+    }
+
+    button{
+      width: 10%;
+      font-size: 1.2em;
+      padding: 10px 0;
+      border: 1px solid #D8D8D8;
+      margin-left: 0.5%;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: #FFE0A6;
+      border-radius: 10%;
+    }
+
+    button:hover{
+      background-color: orange;
+    }
+
+  }
+
+
+}
+
+.wall-post{
+  background-color:white;
+  border: 1px solid #D8D8D8;
+  font-size: 1.5em;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  h1, p{
+    font-size: 0.8em;
+    margin: 0
+  }
+
+}

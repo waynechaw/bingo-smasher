@@ -1,11 +1,18 @@
-<div class="navigation">
-  <ul>
-    <span class="logo">Bingo<span class="smasher">Smasher</span></span>
-    <li>Dashboard</li>
-    <li>Profile</li>
-    <li>Search</li>
-    <li>Messages</li>
-    <li>Setting</li>
-    <li class="logout" ng-click="signout()">Log Out</li>
+<header class="main-header">
+
+  <a class="site-logo">
+    <img src="../assets/logo2.svg">
+  </a>
+  
+  <ul class="nav">
+    <li><a ui-sref=".dashboard">Dashboard</a></li>
+    <li><a ui-sref=".profile">Profile</a></li>    
+    <li><a ui-sref=".search">Search</a></li>   
+    <li><a ui-sref=".messages">Messages</a></li>   
+    <li><a ui-sref=".setting">Setting</a></li>   
+    <li ng-click="signout()"><a href="#">Log Out</a></li>          
   </ul>
-</div>
+
+</header>
+
+<div ui-view></div>
