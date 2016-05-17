@@ -48,6 +48,11 @@ bingoApp.config(function($stateProvider, $urlRouterProvider) {
       controller: 'settingCTRL'
   })
 
+  .state('faq', {
+    url: '/faq',
+    templateUrl: 'app/templates/faq.html'
+  })
+
   
 })
 .run(function ($rootScope, $http, $location, $localStorage) {

@@ -17,8 +17,9 @@ bingoApp.controller('homeCTRL', function($scope, $window, Auth, $location, $loca
       $scope.usernameTaken = false;
   };
 
-
-
+  $scope.gotoFaq = function () {
+    $location.path('/faq');
+  }
 
   $scope.user = {};
   $scope.signInUser = {};
