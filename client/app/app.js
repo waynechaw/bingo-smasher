@@ -63,7 +63,7 @@ bingoApp.config(function($stateProvider, $urlRouterProvider) {
 
 
   $rootScope.$on('$locationChangeStart', function (event, next, current) {
-      var publicPages = ['/'];
+      var publicPages = ['/', '/faq'];
       var restrictedPage = publicPages.indexOf($location.path()) === -1;
 
       if (restrictedPage && !$localStorage.currentUser) {

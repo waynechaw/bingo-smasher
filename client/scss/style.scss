@@ -27,14 +27,14 @@ li {
   margin:0;
 }
 
-a {
+a, a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }
 
 
 .introduction{
   background-color: $primary-color;
-  padding: 30px 25px;    
+  padding: 25px 25px 35px 25px;    
 
   h2{
     text-align: center;
@@ -71,6 +71,7 @@ a {
 .signin{
   @extend .btn;
   float:right;
+  margin-left: 10px;
 }
 
 .signup{

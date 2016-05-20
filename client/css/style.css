@@ -19,12 +19,12 @@ li {
   padding: 0;
   margin: 0; }
 
-a {
+a, a:hover, a:visited, a:link, a:active {
   text-decoration: none; }
 
 .introduction {
   background-color: #ffff60;
-  padding: 30px 25px; }
+  padding: 25px 25px 35px 25px; }
   .introduction h2 {
     text-align: center;
     padding-bottom: 25px;
@@ -50,7 +50,8 @@ a {
   background-color: #80bfff; }
 
 .signin {
-  float: right; }
+  float: right;
+  margin-left: 10px; }
 
 .signup {
   display: block;

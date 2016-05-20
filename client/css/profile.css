@@ -48,3 +48,5 @@
   .wall-post h1, .wall-post p {
     font-size: 0.8em;
     margin: 0; }
+  .wall-post h1 {
+    color: #4078c0; }
